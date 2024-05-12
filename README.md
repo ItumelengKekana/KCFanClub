@@ -26,4 +26,4 @@
 When first cloning the repo or adding new dependencies, run this command.  This will:
 
 - Install Node dependencies from package.json
-- Install .NET Core dependencies from api/api.csproj and api.test/api.test.csproj (using dotnet restore)
+- Install .NET Core dependencies using dotnet restore
