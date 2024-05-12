@@ -207,7 +207,7 @@ namespace KCFanClub.Server.Data
 		{
 			if (!optionsBuilder.IsConfigured)
 			{
-				optionsBuilder.UseMySQL("Server=localhost;Database=KCFanClubDB;User=root;Password=333iostream&I;");
+				optionsBuilder.UseMySQL("Server=localhost;Database=KCFanClubDB;User=root;Password=;");
 			}
 		}
 
