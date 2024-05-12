@@ -12,6 +12,9 @@ namespace KCFanClub.Server.Data
 
 		public DbSet<Match> Match { get; set; }
 		public DbSet<PlayerProfile> PlayerProfile { get; set; }
+		public DbSet<MatchResult> MatchResults { get; set; }
+		public DbSet<Post> Posts { get; set; }
+
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
@@ -100,8 +103,114 @@ namespace KCFanClub.Server.Data
 					Nationality = "Venezuelan",
 					Position = "Midfielder",
 					Bio = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium",
+				},
+				new PlayerProfile
+				{
+					Id = 6,
+					Name = "Edmilson Dove",
+					Nationality = "Mozambique",
+					Position = "Defender",
+					Bio = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium",
+				},
+				new PlayerProfile
+				{
+					Id = 7,
+					Name = "Thatayaone Ditlhokwe",
+					Nationality = "Botswana",
+					Position = "Defender",
+					Bio = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium",
+				},
+				new PlayerProfile
+				{
+					Id = 8,
+					Name = "Njabulo Ngcobo",
+					Nationality = "South African",
+					Position = "Defender",
+					Bio = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium",
 				}
 			);
+
+			modelBuilder.Entity<MatchResult>().HasData(
+				new MatchResult
+				{
+					Id = 1,
+					HomeTeam = "Kaizer Chiefs",
+					AwayTeam = "Orlando Pirates",
+					AwayScore = "0",
+					HomeScore = "3",
+				},
+				new MatchResult
+				{
+					Id = 2,
+					HomeTeam = "Polokwane City",
+					AwayTeam = "Kaizer Chiefs",
+					AwayScore = "2",
+					HomeScore = "1",
+				},
+				new MatchResult
+				{
+					Id = 3,
+					HomeTeam = "Kaizer Chiefs",
+					AwayTeam = "TS Galaxy",
+					AwayScore = "0",
+					HomeScore = "1",
+				},
+				new MatchResult
+				{
+					Id = 4,
+					HomeTeam = "Kaizer Chiefs",
+					AwayTeam = "AmaZulu",
+					AwayScore = "3",
+					HomeScore = "2",
+				},
+				new MatchResult
+				{
+					Id = 5,
+					HomeTeam = "Cape Town City",
+					AwayTeam = "Kaizer Chiefs",
+					AwayScore = "0",
+					HomeScore = "3",
+				}
+
+				);
+
+			modelBuilder.Entity<Post>().HasData(
+				new Post
+				{
+					Id = 1,
+					Username = "Test",
+					Comment = "Test",
+				},
+				new Post
+				{
+					Id = 2,
+					Username = "Test1",
+					Comment = "Sed ut perspiciatis unde omnis iste",
+				},
+				new Post
+				{
+					Id = 3,
+					Username = "John",
+					Comment = "Sed ut perspiciatis unde omnis iste",
+				},
+				new Post
+				{
+					Id = 4,
+					Username = "Jane",
+					Comment = "Sed ut perspiciatis unde omnis iste",
+				}
+
+				);
 		}
+
+		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+		{
+			if (!optionsBuilder.IsConfigured)
+			{
+				optionsBuilder.UseMySQL("Server=localhost;Database=KCFanClubDB;User=root;Password=333iostream&I;");
+			}
+		}
+
+
 	}
 }

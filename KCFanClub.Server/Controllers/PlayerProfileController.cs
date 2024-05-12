@@ -50,7 +50,7 @@ namespace KCFanClub.Server.Controllers
 
 		// POST api/<PlayerProfileController>
 		[HttpPost]
-		public async Task<IActionResult> PostPlayer(PlayerProfile player)
+		public async Task<IActionResult> PostPlayer([FromBody] PlayerProfile player)
 		{
 			try
 			{
@@ -70,7 +70,7 @@ namespace KCFanClub.Server.Controllers
 
 		// PUT api/<PlayerProfileController>/5
 		[HttpPut("{id:int}")]
-		public async Task<IActionResult> PutPlayer(int id, PlayerProfile playerToUpdate)
+		public async Task<IActionResult> PutPlayer(int id,[FromBody] PlayerProfile playerToUpdate)
 		{
 			if (id != playerToUpdate.Id)
 			{

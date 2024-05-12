@@ -2,6 +2,7 @@
 using KCFanClub.Server.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KCFanClub.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240512145939_AddPostsTable")]
+    partial class AddPostsTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,41 +51,41 @@ namespace KCFanClub.Server.Migrations
                         new
                         {
                             Id = 1,
-                            Date = "2024/05/18",
+                            Date = "2024/05/17",
                             Opponent = "Orlando Pirates",
-                            Time = "12:00 am",
+                            Time = "04:00 pm",
                             Venue = "Orlando Stadium"
                         },
                         new
                         {
                             Id = 2,
-                            Date = "2024/05/20",
+                            Date = "2024/05/19",
                             Opponent = "Golden Arrows",
-                            Time = "12:00 am",
+                            Time = "04:00 pm",
                             Venue = "Lamontville Stadium"
                         },
                         new
                         {
                             Id = 3,
-                            Date = "2024/05/23",
+                            Date = "2024/05/22",
                             Opponent = "Bloemfontein Celtics",
-                            Time = "12:00 am",
+                            Time = "04:00 pm",
                             Venue = "Bloemfontein Stadium"
                         },
                         new
                         {
                             Id = 4,
-                            Date = "2024/05/27",
+                            Date = "2024/05/26",
                             Opponent = "Mamelodi Sundowns",
-                            Time = "12:00 am",
+                            Time = "04:00 pm",
                             Venue = "HM Pitje Stadium"
                         },
                         new
                         {
                             Id = 5,
-                            Date = "2024/06/01",
+                            Date = "2024/05/31",
                             Opponent = "Moroka Swallows",
-                            Time = "12:00 am",
+                            Time = "04:00 pm",
                             Venue = "Moroka Stadium"
                         });
                 });
@@ -222,30 +225,6 @@ namespace KCFanClub.Server.Migrations
                             Name = "Edson Castillo",
                             Nationality = "Venezuelan",
                             Position = "Midfielder"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Bio = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium",
-                            Name = "Edmilson Dove",
-                            Nationality = "Mozambique",
-                            Position = "Defender"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Bio = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium",
-                            Name = "Thatayaone Ditlhokwe",
-                            Nationality = "Botswana",
-                            Position = "Defender"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Bio = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium",
-                            Name = "Njabulo Ngcobo",
-                            Nationality = "South African",
-                            Position = "Defender"
                         });
                 });
 
