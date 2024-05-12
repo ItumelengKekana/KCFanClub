@@ -6,7 +6,7 @@
 - Client
   - React 18
   - Vite
-  - CSS Modules
+  - Tailwind CSS
   - Fetch API for REST requests
 
 ## Setup
