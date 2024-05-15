@@ -23,6 +23,9 @@ namespace KCFanClub.Server.Controllers
 		}
 
 		[HttpGet]
+		[ProducesResponseType(StatusCodes.Status200OK)]
+		[ProducesResponseType(StatusCodes.Status404NotFound)]
+		[ProducesResponseType(StatusCodes.Status500InternalServerError)]
 		public async Task<ActionResult<APIResponse>> GetAllMatches()
 		{
 			_logger.LogInformation("Getting all matches");
@@ -49,6 +52,9 @@ namespace KCFanClub.Server.Controllers
 
 		// GET api/<MatchController>/5
 		[HttpGet("{id:int}")]
+		[ProducesResponseType(StatusCodes.Status200OK)]
+		[ProducesResponseType(StatusCodes.Status404NotFound)]
+		[ProducesResponseType(StatusCodes.Status500InternalServerError)]
 		public async Task<ActionResult<APIResponse>> GetMatch(int id)
 		{
 			try
@@ -77,6 +83,10 @@ namespace KCFanClub.Server.Controllers
 
 		// POST api/<MatchController>
 		[HttpPost]
+		[ProducesResponseType(StatusCodes.Status200OK)]
+		[ProducesResponseType(StatusCodes.Status201Created)]
+		[ProducesResponseType(StatusCodes.Status401Unauthorized)]
+		[ProducesResponseType(StatusCodes.Status400BadRequest)]
 		public async Task<ActionResult<APIResponse>> PostMatch([FromBody] Match matchToPost)
 		{
 			try
@@ -101,6 +111,11 @@ namespace KCFanClub.Server.Controllers
 
 		// PUT api/<MatchController>/5
 		[HttpPut("{id:int}")]
+		[ProducesResponseType(StatusCodes.Status200OK)]
+		[ProducesResponseType(StatusCodes.Status204NoContent)]
+		[ProducesResponseType(StatusCodes.Status404NotFound)]
+		[ProducesResponseType(StatusCodes.Status500InternalServerError)]
+		[ProducesResponseType(StatusCodes.Status400BadRequest)]
 		public async Task<IActionResult> PutMatch(int id, [FromBody] Match matchToUpdate)
 		{
 			if (id != matchToUpdate.Id)
@@ -133,6 +148,10 @@ namespace KCFanClub.Server.Controllers
 
 		// DELETE api/<MatchController>/5
 		[HttpDelete("{id:int}")]
+		[ProducesResponseType(StatusCodes.Status200OK)]
+		[ProducesResponseType(StatusCodes.Status404NotFound)]
+		[ProducesResponseType(StatusCodes.Status500InternalServerError)]
+		[ProducesResponseType(StatusCodes.Status400BadRequest)]
 		public async Task<ActionResult<APIResponse>> DeleteMatch(int id)
 		{
 			try
