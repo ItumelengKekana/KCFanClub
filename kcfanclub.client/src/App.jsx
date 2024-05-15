@@ -19,7 +19,7 @@ function App() {
     async function populatePlayerData() {
         const response = await fetch('https://localhost:7084/api/players');
         const data = await response.json();
-        setPlayer(data);
+        setPlayer(data.result);
     }
 
     return (

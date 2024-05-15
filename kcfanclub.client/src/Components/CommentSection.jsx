@@ -13,7 +13,7 @@ function CommentSection() {
     async function populateCommentsData() {
         const response = await fetch('https://localhost:7084/api/comments');
         const data = await response.json();
-        setPosts(data);
+        setPosts(data.result);
     }
 
     const addComment = async () => {

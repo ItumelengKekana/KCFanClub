@@ -10,7 +10,7 @@ function MatchResults() {
     async function populateResultsData() {
         const response = await fetch('https://localhost:7084/api/results');
         const data = await response.json();
-        setResults(data);
+        setResults(data.result);
     }
 
     return (
